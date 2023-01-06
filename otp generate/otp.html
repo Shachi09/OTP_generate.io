@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP</title>
+</head>
+<body>
+
+    <form onsubmit="check(this)">
+        
+        <label for="newOtp">Enter your OTP: </label>
+        <input type="number" name="newOtp" id="newOtp">
+
+        <input type="submit" value="submit">
+    
+    </form>
+
+
+
+
+
+    
+
+
+
+
+    <script type="text/javascript">
+        
+        const userfname = sessionStorage.getItem('fname');
+        const userlname = sessionStorage.getItem('lname');
+
+        const myOtp = sessionStorage.getItem('otp');
+        alert(myOtp)
+
+        
+
+         function check(form) {
+            
+            const userOtp = document.getElementById('newOtp').value;
+
+             if (myOtp === userOtp) {
+                alert(`${userfname} ${userlname} you have successfull log in`);
+                form.action = "./welcome.html"
+                
+
+             } 
+             else {
+                alert("Failed to log in, please check entered data")
+                
+             }
+         }
+
+         function redirect() {
+             if  (myOtp === userOtp) {
+                url = './welcome.html'
+                
+             } else {
+                url= './form.html'
+                
+             }
+         }
+
+    </script>
+
+
+</body>
+
+</body>
+</html>

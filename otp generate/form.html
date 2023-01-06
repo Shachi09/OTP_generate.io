@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <div class="myForm">
+
+        <h1>Hello this page to generate otp!</h1> <br><br>
+       <form action="./otp.html" onsubmit="generate()">
+
+          <label for="fname">First Name:</label>
+          <input type="text" name="fname" placeholder="Your Name" id="first"> <br>
+
+          <label for="lname">Last Name:</label>
+          <input type="text" name="lname" placeholder="Your Lastname" id="last"> <br>
+
+          <input type="submit" value="send">
+
+       </form>
+    </div>
+
+
+
+
+
+
+
+
+
+   <script>
+
+      function generate() {
+
+        const fname = document.getElementById('first').value;
+        const lname= document.getElementById('last').value;
+
+        const otp = Math.round(Math.random()*1000);
+            
+
+
+        sessionStorage.setItem('fname', fname);
+        sessionStorage.setItem('lname', lname);
+        sessionStorage.setItem('otp', otp);
+
+
+
+      }
+
+
+   </script>
+
+
+</body>
+</html>
